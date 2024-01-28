@@ -1,4 +1,4 @@
-import { getMealDetails, getListCategories, getCategoryMeals, getListArea, getAreaMeals, getIngredients, getIngredientsMeals, getMealByName, getMealByFLetter } from './MealAPI.mjs';
+import { getMealDetails, getListCategories, getCategoryMeals, getListArea, getAreaMeals, getIngredients, getIngredientsMeals, getMealByName, getMealByFLetter } from './MealAPI.js';
 
 
 // !===>  Function to search and display Meals list by name  
@@ -83,7 +83,7 @@ const displayCategories = async () => {
                     <img loading="lazy" class="d-block w-100" src="${arr[i].strCategoryThumb}" alt="${arr[i].strCategory}">
                     <div class="meal-layer position-absolute text-center text-black p-2 overflow-hidden ">
                         <h3>${arr[i].strCategory}</h3>
-                        <p>${arr[i].strCategoryDescription.split(" ").slice(0, 10).join(" ")}..</p>
+                        <p>${arr[i].strCategoryDescription.split(" ").slice(0, 20).join(" ")}..</p>
                     </div>
                 </div>
             </div>`;

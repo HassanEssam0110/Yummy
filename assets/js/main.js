@@ -1,6 +1,6 @@
-import { displayCategories, displayArea, displayIngredients, displayMeals, searchByName, searchByFLetter } from './DisplayFunctions.mjs'
-import { getMealByName } from './MealAPI.mjs'
-import { handleInputsValidation } from "./inputValidation.mjs";
+import { displayCategories, displayArea, displayIngredients, displayMeals, searchByName, searchByFLetter } from './DisplayFunctions.js'
+import { getMealByName } from './MealAPI.js'
+import { handleInputsValidation } from "./inputValidation.js";
 
 // ^=============== APP VARIABLES ===============
 let sideToggle = false;
