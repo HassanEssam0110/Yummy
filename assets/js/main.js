@@ -10,12 +10,13 @@ $(document).ready(async () => {
     closeSideMenu(0);
     removeLoderScreen(); // remove loader screen
     resizeSectionWidth(); // handle section width
-    await displayMeals(await getMealByName(''));
+    // await displayMeals(await getMealByName(''));
 });
 
-// $(window).ready(async () => {
-//     await displayMeals(await getMealByName(''));
-// });
+$(window).ready(async () => {
+    let meals = await getMealByName('')
+    await displayMeals(meals);
+});
 
 $(window).on("resize", function () {
     resizeSectionWidth();
@@ -56,7 +57,7 @@ $("a.nav-link[href^='#']").click(async (e) => {
     };
 });
 
-$('#searchByNameInput').on('keyup', async function (e)  {
+$('#searchByNameInput').on('keyup', async function (e) {
     await searchByName($(this).val());
 });
 
