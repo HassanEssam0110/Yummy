@@ -33,6 +33,7 @@ $("a.nav-link[href^='#']").click(async (e) => {
     $(`section${targetSection}`).fadeIn(0, () => {
         $('html, body').animate({ scrollTop: 0 }, 10);
     });
+
     switch (targetSection) {
         case '#search':
             $('#search .inner-loading-screen').css({ display: 'none' });
@@ -55,12 +56,15 @@ $("a.nav-link[href^='#']").click(async (e) => {
     };
 });
 
-$('#searchByNameInput').on('keyup', async (e) => {
-    await searchByName($(e.target).val());
+$('#searchByNameInput').on('keyup', async function (e)  {
+    await searchByName($(this).val());
 });
 
-$('#searchByFLetterInput').on('keyup', async (e) => {
-    await searchByFLetter($(e.target).val() || 'a');
+$('#searchByFLetterInput').on('keyup', async function () {
+    if ($(this).val().length > 1) {
+        $(this).val($(this).val().substring(0, 1));
+    }
+    await searchByFLetter($(this).val() || 'a');
 });
 
 // *=============== FUNCTIONS ===============

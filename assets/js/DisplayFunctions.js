@@ -117,6 +117,7 @@ const displayArea = async () => {
                 <h3>${arr[i].strArea}</h3>
         </div>
         </div>`}
+
     $('#dataArea').html(cartoona);
     // Render areas and attach click event
     $('#area .inner-loading-screen').fadeOut(500, () => {
