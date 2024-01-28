@@ -162,8 +162,10 @@ const displayIngredients = async () => {
 const displayMeals = async (arr) => {
     $('#meals .inner-loading-screen').css({ display: 'flex' });
     $('#dataMeals').html('');
-    $('section').fadeOut(100);  // hide all sections and show section meals.
-    $('#meals').fadeIn(100); // show meals Section
+    // hide all sections and show section meals.
+    $('section').fadeOut(10, () => {
+        $('#meals').fadeIn(100);
+    });
     $('html, body').animate({ scrollTop: 0 });
 
     let cartoona = "";
@@ -196,8 +198,10 @@ const displayMeals = async (arr) => {
 const displayMealDetails = async (meal) => {
     $('#mealsDetails .inner-loading-screen').css({ display: 'flex' });
     $('#dataMealsDetails').html('');
-    $('section').fadeOut(100); // hide all sections and show section meals.
-    $('#mealsDetails').fadeIn(100);
+    // hide all sections and show section meals.
+    $('section').fadeOut(10, () => {
+        $('#mealsDetails').fadeIn(100);
+    });
     $('html, body').animate({ scrollTop: 0 });
 
     let cartoona, tagsStr = '';
